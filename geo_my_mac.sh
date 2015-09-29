@@ -6,6 +6,12 @@
 #   NodeJS
 #   Xquartz: https://xquartz.macosforge.org/landing/
 
+# Set/get db param
+DB="immap"
+if [ $1 ]; then
+	DB=$1
+fi
+
 echo "-------GeoMyMac-------"
 echo "Installing postgres..."
 brew install postgres &> /dev/null
@@ -14,6 +20,10 @@ brew install postgis &> /dev/null
 echo "Start the server..."
 pg_ctl -D /usr/local/var/postgres stop
 pg_ctl -D /usr/local/var/postgres start
+echo "Create database $DB"
+createdb $DB
+psql -d $DB -c 'CREATE EXTENSION postgis;'
+
 # Check if server is running
 export PGDATA='/usr/local/var/postgres'
 pg_ctl status

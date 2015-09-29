@@ -1,7 +1,7 @@
-# geo-my-mac
+## geo-my-mac
 Installs PostgreSQL/PostGIS, GDAL/OGR and QGIS on MACOSX
 
-# Prerequisits;
+### Prerequisits
  - Python 2.7 
  - Brew
  - pip

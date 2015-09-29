@@ -1,4 +1,4 @@
-## geo-my-mac
+## geo-mac
 Installs PostgreSQL/PostGIS, GDAL/OGR and QGIS on MACOSX
 
 ### Prerequisits
